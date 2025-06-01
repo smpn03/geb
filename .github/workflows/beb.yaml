@@ -1,4 +1,4 @@
-name: Check vCPU
+name: Check vCPUU
 
 on: push
 
