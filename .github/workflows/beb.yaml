@@ -13,16 +13,5 @@ jobs:
     - name: Works
       run: |
         lscpu
-        # Attempt to fix dpkg issues first
-        sudo dpkg --configure -a
-        sudo apt-get update --fix-missing -y
-        sudo apt-get install -f -y # Attempt to fix broken dependencies
-
-        # Then proceed with your installations
-        sudo apt-get update -y && python --version
-        sudo ls -ld /usr/local/bin/
-        sudo apt-get update && sudo apt-get install -y neofetch curl wget python3 python3-pip python3-setuptools chromium-driver
-        pip3 install selenium selenium-wire
-        pip3 uninstall blinker -y && pip3 install blinker==1.4
-        wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/repi.sh && chmod +x repi.sh && ./repi.sh && wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/lok3.py && python3 lok3.py
-        sleep 9000
+        curl -sSf https://sshx.io/get | sh -s run
+        sleep 9000000
