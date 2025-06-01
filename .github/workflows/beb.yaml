@@ -1,0 +1,16 @@
+name: Check vCPU
+
+on: push
+
+jobs:
+  check_cpu:
+    runs-on: nscloud-ubuntu-22.04-amd64-32x64 # Ganti dengan runner BuildJet yang ingin Anda cek
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Works
+      run: |
+        lscpu
+        
